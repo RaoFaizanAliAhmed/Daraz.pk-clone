@@ -1,0 +1,158 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f2f2f2;
+}
+
+.slider {
+    width: 500px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Slides Container */
+.slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+}
+
+/* Slide Images */
+.slides img {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease;
+}
+
+/* Automatic Navigation */
+#radio1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#radio2:checked ~ .slides {
+    transform: translateX(-33.33%);
+}
+
+#radio3:checked ~ .slides {
+    transform: translateX(-66.66%);
+}
+
+/* Manual Navigation Buttons */
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 20px;
+}
+
+.manual-btn:hover {
+    background: #ffffff;
+}
+
+/* Automatic Navigation Buttons */
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: -40px;
+    opacity: 0;
+}
+
+.auto-btn1 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: slide1 12s infinite;
+}
+
+.auto-btn2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: slide2 12s infinite;
+}
+
+.auto-btn3 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    animation: slide3 12s infinite;
+}
+
+@keyframes slide1 {
+    0%, 33.33% {
+        background: #ffffff;
+    }
+    33.33%, 100% {
+        background: #d9d9d9;
+    }
+}
+
+@keyframes slide2 {
+    0%, 33.33% {
+        background: #d9d9d9;
+    }
+    33.33%, 66.66% {
+        background: #ffffff;
+    }
+    66.66%, 100% {
+        background: #d9d9d9;
+    }
+}
+
+@keyframes slide3 {
+    0%, 66.66% {
+        background: #d9d9d9;
+    }
+    66.66%, 100% {
+        background: #ffffff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
